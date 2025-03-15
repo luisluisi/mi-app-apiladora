@@ -136,3 +136,52 @@ h1 {
 .small-button:hover {
   background-color: #e14e2d;
 }
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;  /* Hacer el título un poco más pequeño */
+  }
+
+  /* Ajustar el tamaño de los botones del menú principal */
+  #menu-principal button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+  }
+
+  /* Ajustar el grid de botones OPL: 2 columnas en lugar de 4 */
+  .button-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* Hacer los botones OPL más grandes en móviles */
+  .button-container button {
+    padding: 15px;
+    font-size: 1.1em;
+  }
+
+  /* Ajustar las flechas de paginación */
+  .pagination button {
+    padding: 12px 18px;
+    font-size: 1.2em;
+  }
+
+  /* Hacer que el visor de PDF sea un poco más compacto en móviles */
+  #pdf-frame {
+    margin-top: 20px;
+  }
+}
+
+/* Ajustes para pantallas más pequeñas (dispositivos móviles en modo apaisado) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  /* Reducir el tamaño de los botones OPL */
+  .button-container button {
+    padding: 12px;
+    font-size: 1em;
+  }
+}
