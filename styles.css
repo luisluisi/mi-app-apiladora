@@ -1,0 +1,138 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.title-container {
+  margin-bottom: 20px;
+}
+
+.title-container img {
+  width: 100px;
+  margin: 0 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin: 0.5em 0;
+}
+
+/* Menú Principal: Botones grandes y distribuidos */
+#menu-principal {
+  padding: 20px;
+}
+
+#menu-principal button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  margin: 10px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#menu-principal button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Contenedores de pantalla completa (para PDF y OPLs) en modo flex */
+.fullscreen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Visor de PDF: el iframe ocupa el espacio restante */
+#pdf-frame {
+  width: 100%;
+  flex: 1;
+  border: none;
+}
+
+/* Pantalla OPLs: Título centrado y grande */
+#opl-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+/* Contenedor de botones OPL: grid de 4 columnas */
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 20px;
+}
+
+/* Botones OPL: Más grandes */
+.button-container button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 20px;
+  font-size: 1.3em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button-container button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Paginación: Flechas grandes, centradas en la parte inferior */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  font-size: 1.4em;
+  border-radius: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: #218838;
+}
+
+/* Botón pequeño, por ejemplo para ATRÁS */
+.small-button {
+  background-color: #FF5733;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 0.9em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.small-button:hover {
+  background-color: #e14e2d;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WCM APILADORA LÍNEA DE ROCA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Contenedor para visualizar PDFs a pantalla completa -->
+  <div id="pdf-container" class="fullscreen-container" style="display:none;">
+    <button class="small-button" onclick="goBack()">ATRÁS</button>
+    <iframe id="pdf-frame"></iframe>
+  </div>
+
+  <!-- Contenedor para OPLs -->
+  <div id="opl-container" class="fullscreen-container" style="display:none;">
+    <button class="small-button" onclick="volverMenu()">MENÚ PRINCIPAL</button>
+    <h2 id="opl-title">OPLs</h2>
+    <div id="opl-buttons" class="button-container"></div>
+    <div id="pagination-buttons" class="pagination"></div>
+  </div>
+
+  <!-- Menú Principal -->
+  <div id="menu-principal">
+    <div class="title-container">
+      <img src="saint-gobain-logo-new.png" alt="Saint-Gobain Logo">
+      <h1>WCM APILADORA<br>LÍNEA DE ROCA</h1>
+      <img src="new-logo.png" alt="New Logo">
+    </div>
+    <button onclick="cargarPDF('manual apiladora.pdf', 'menu-principal')">MANUAL APILADORA</button>
+    <button onclick="mostrarOPLs()">OPLs</button>
+    <button onclick="mostrarLecciones()">LECCIONES PUNTUALES</button>
+    <button onclick="mostrarKaizens()">QUICK KAIZENs</button>
+    <button onclick="mostrarExitos()">HOJA DE EXITOS</button>
+    <button onclick="cargarPDF('LIMPIEZA WCM APILADORA.pdf', 'menu-principal')" class="btn-limpieza">
+      LIMPIEZA WCM APILADORA
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
