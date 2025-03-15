@@ -9,7 +9,10 @@
 <body>
   <!-- Contenedor para visualizar PDFs a pantalla completa -->
   <div id="pdf-container" class="fullscreen-container" style="display:none;">
-    <button class="small-button" onclick="goBack()">ATRÁS</button>
+    <div class="pdf-header">
+      <button class="small-button" onclick="goBack()">CERRAR</button>
+      <a id="download-link" href="" download class="small-button">DESCARGAR</a>
+    </div>
     <iframe id="pdf-frame"></iframe>
   </div>
 
@@ -30,7 +33,7 @@
     </div>
     <button onclick="cargarPDF('manual apiladora.pdf', 'menu-principal')">MANUAL APILADORA</button>
     <button onclick="mostrarOPLs()">OPLs</button>
-    <button onclick="mostrarLecciones()">LECCIONES PUNTUALES</button>
+    <button onclick="mostrarMetodoEstandar()">MÉTODO ESTÁNDAR</button>
     <button onclick="mostrarKaizens()">QUICK KAIZENs</button>
     <button onclick="mostrarExitos()">HOJA DE EXITOS</button>
     <button onclick="cargarPDF('LIMPIEZA WCM APILADORA.pdf', 'menu-principal')" class="btn-limpieza">

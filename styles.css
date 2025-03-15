@@ -43,7 +43,7 @@ h1 {
   transform: translateY(-2px);
 }
 
-/* Contenedores de pantalla completa (para PDF y OPLs) en modo flex */
+/* Contenedores de pantalla completa */
 .fullscreen-container {
   position: fixed;
   top: 0;
@@ -53,23 +53,40 @@ h1 {
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
-/* Visor de PDF: el iframe ocupa el espacio restante */
+/* Visor de PDF */
 #pdf-frame {
   width: 100%;
   flex: 1;
   border: none;
 }
 
-/* Pantalla OPLs: Título centrado y grande */
+/* Encabezado del visor PDF */
+.pdf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.pdf-header .small-button {
+  position: static;
+  margin: 0 5px;
+}
+
+/* Pantalla OPLs */
 #opl-title {
   font-size: 36px;
   font-weight: bold;
   margin: 20px 0;
 }
 
-/* Contenedor de botones OPL: grid de 4 columnas */
+/* Contenedor de botones OPL (grid de 4 columnas) */
 .button-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -118,7 +135,7 @@ h1 {
   background-color: #218838;
 }
 
-/* Botón pequeño, por ejemplo para ATRÁS */
+/* Botón pequeño (por ejemplo, para CERRAR y DESCARGAR) */
 .small-button {
   background-color: #FF5733;
   color: white;
@@ -128,60 +145,16 @@ h1 {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  position: absolute;
-  top: 20px;
-  left: 20px;
 }
 
 .small-button:hover {
   background-color: #e14e2d;
 }
 
-/* Ajustes para pantallas pequeñas (móviles) */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2em;  /* Hacer el título un poco más pequeño */
-  }
-
-  /* Ajustar el tamaño de los botones del menú principal */
+/* Adaptación a dispositivos móviles */
+@media (max-width: 600px) {
   #menu-principal button {
-    padding: 12px 25px;
-    font-size: 1.1em;
-  }
-
-  /* Ajustar el grid de botones OPL: 2 columnas en lugar de 4 */
-  .button-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  /* Hacer los botones OPL más grandes en móviles */
-  .button-container button {
-    padding: 15px;
-    font-size: 1.1em;
-  }
-
-  /* Ajustar las flechas de paginación */
-  .pagination button {
-    padding: 12px 18px;
-    font-size: 1.2em;
-  }
-
-  /* Hacer que el visor de PDF sea un poco más compacto en móviles */
-  #pdf-frame {
-    margin-top: 20px;
-  }
-}
-
-/* Ajustes para pantallas más pequeñas (dispositivos móviles en modo apaisado) */
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.8em;
-  }
-
-  /* Reducir el tamaño de los botones OPL */
-  .button-container button {
-    padding: 12px;
-    font-size: 1em;
+    width: 90%;
+    margin: 10px auto;
   }
 }
