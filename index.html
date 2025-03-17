@@ -23,6 +23,14 @@
     <div id="opl-buttons" class="button-container"></div>
     <div id="pagination-buttons" class="pagination"></div>
   </div>
+  
+  <!-- Contenedor para QUICK KAIZENs -->
+  <div id="kaizens-container" class="fullscreen-container" style="display:none;">
+    <button class="small-button" onclick="volverMenu()">MENÚ PRINCIPAL</button>
+    <h2 id="kaizens-title">QUICK KAIZENs</h2>
+    <div id="kaizens-buttons" class="button-container"></div>
+    <div id="kaizens-pagination" class="pagination"></div>
+  </div>
 
   <!-- Menú Principal -->
   <div id="menu-principal">
@@ -31,14 +39,18 @@
       <h1>WCM APILADORA<br>LÍNEA DE ROCA</h1>
       <img src="new-logo.png" alt="New Logo">
     </div>
-    <button onclick="cargarPDF('manual apiladora.pdf', 'menu-principal')">MANUAL APILADORA</button>
-    <button onclick="mostrarOPLs()">OPLs</button>
-    <button onclick="mostrarMetodoEstandar()">MÉTODO ESTÁNDAR</button>
-    <button onclick="mostrarKaizens()">QUICK KAIZENs</button>
-    <button onclick="mostrarExitos()">HOJA DE EXITOS</button>
-    <button onclick="cargarPDF('LIMPIEZA WCM APILADORA.pdf', 'menu-principal')" class="btn-limpieza">
-      LIMPIEZA WCM APILADORA
-    </button>
+    <div class="button-row">
+      <button onclick="cargarPDF('MANUAL APILADORA.pdf', 'menu-principal')">MANUAL APILADORA</button>
+      <button onclick="mostrarOPLs()">OPLs</button>
+      <button onclick="mostrarKaizens()">QUICK KAIZENs</button>
+    </div>
+    <div class="button-row">
+      <button onclick="mostrarMetodoEstandar()">MÉTODO ESTÁNDAR</button>
+      <button onclick="mostrarExitos()">HOJA DE EXITOS</button>
+      <button onclick="cargarPDF('LIMPIEZA WCM APILADORA.pdf', 'menu-principal')" class="btn-limpieza">
+        LIMPIEZA WCM APILADORA
+      </button>
+    </div>
   </div>
 
   <script src="script.js"></script>

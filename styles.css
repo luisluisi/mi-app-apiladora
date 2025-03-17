@@ -21,9 +21,19 @@ h1 {
   margin: 0.5em 0;
 }
 
-/* Menú Principal: Botones grandes y distribuidos */
+/* Menú Principal: Botones grandes y distribuidos en dos filas */
 #menu-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 #menu-principal button {
@@ -31,10 +41,11 @@ h1 {
   color: white;
   border: none;
   padding: 15px 30px;
-  margin: 10px;
   font-size: 1.2em;
   border-radius: 10px;
   cursor: pointer;
+  width: 200px;
+  height: 60px;
   transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -86,10 +97,10 @@ h1 {
   margin: 20px 0;
 }
 
-/* Contenedor de botones OPL (grid de 4 columnas) */
+/* Contenedor de botones OPL (grid de 3 columnas) */
 .button-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas para 12 botones */
   gap: 15px;
   margin: 20px;
 }
@@ -153,6 +164,10 @@ h1 {
 
 /* Adaptación a dispositivos móviles */
 @media (max-width: 600px) {
+  .button-row {
+    flex-direction: column;
+  }
+
   #menu-principal button {
     width: 90%;
     margin: 10px auto;
