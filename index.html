@@ -32,6 +32,22 @@
     <div id="kaizens-pagination" class="pagination"></div>
   </div>
 
+  <!-- Contenedor para MÉTODO ESTÁNDAR -->
+  <div id="metodo-estandar-container" class="fullscreen-container" style="display:none;">
+    <button class="small-button" onclick="volverMenu()">MENÚ PRINCIPAL</button>
+    <h2 id="metodo-estandar-title">MÉTODO ESTÁNDAR</h2>
+    <div id="metodo-estandar-buttons" class="button-container"></div>
+    <div id="metodo-estandar-pagination" class="pagination"></div>
+  </div>
+
+  <!-- Contenedor para HOJA DE ÉXITOS -->
+  <div id="exitos-container" class="fullscreen-container" style="display:none;">
+    <button class="small-button" onclick="volverMenu()">MENÚ PRINCIPAL</button>
+    <h2 id="exitos-title">HOJA DE ÉXITOS</h2>
+    <div id="exitos-buttons" class="button-container"></div>
+    <div id="exitos-pagination" class="pagination"></div>
+  </div>
+
   <!-- Menú Principal -->
   <div id="menu-principal">
     <div class="title-container">
@@ -46,7 +62,7 @@
     </div>
     <div class="button-row">
       <button onclick="mostrarMetodoEstandar()">MÉTODO ESTÁNDAR</button>
-      <button onclick="mostrarExitos()">HOJA DE EXITOS</button>
+      <button onclick="mostrarExitos()">HOJA DE ÉXITOS</button>
       <button onclick="cargarPDF('LIMPIEZA WCM APILADORA.pdf', 'menu-principal')" class="btn-limpieza">
         LIMPIEZA WCM APILADORA
       </button>
