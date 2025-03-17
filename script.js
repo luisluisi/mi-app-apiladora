@@ -10,6 +10,18 @@ let kaizensPaginaActual = 0;
 let kaizensArchivos = [];
 let kaizensTotalPaginas = 0;
 
+// Variables para Método Estándar
+const ITEMS_POR_PAGINA_METODO = 12;
+let metodoPaginaActual = 0;
+let metodoArchivos = [];
+let metodoTotalPaginas = 0;
+
+// Variables para Hoja de Éxitos
+const ITEMS_POR_PAGINA_EXITOS = 12;
+let exitosPaginaActual = 0;
+let exitosArchivos = [];
+let exitosTotalPaginas = 0;
+
 // Función para generar botones de OPL usando filelist.json
 function generarOPLButtonsDinamicos() {
   fetch('filelist.json')
@@ -123,6 +135,120 @@ function actualizarKaizensPaginacion() {
   }
 }
 
+// Función para generar botones de Método Estándar usando filelist.json
+function generarMetodoEstandarButtonsDinamicos() {
+  fetch('filelist.json')
+    .then(response => response.json())
+    .then(data => {
+      // Filtrar archivos que comienzan con "2" y terminan en ".pdf"
+      metodoArchivos = data.filter(file => file.startsWith("2") && file.endsWith(".pdf"));
+      metodoTotalPaginas = Math.ceil(metodoArchivos.length / ITEMS_POR_PAGINA_METODO);
+      mostrarMetodoEstandarPagina(0);
+    })
+    .catch(error => console.error("Error al cargar filelist.json:", error));
+}
+
+// Función para mostrar una página de botones Método Estándar
+function mostrarMetodoEstandarPagina(indicePagina) {
+  metodoPaginaActual = indicePagina;
+  const contenedor = document.getElementById("metodo-estandar-buttons");
+  contenedor.innerHTML = "";
+  
+  const inicio = metodoPaginaActual * ITEMS_POR_PAGINA_METODO;
+  const fin = inicio + ITEMS_POR_PAGINA_METODO;
+  const archivosPagina = metodoArchivos.slice(inicio, fin);
+  
+  archivosPagina.forEach(file => {
+    // Quitamos el primer carácter (el "2") y la extensión ".pdf"
+    const label = file.substring(1).replace(".pdf", "").trim();
+    const btn = document.createElement("button");
+    btn.textContent = label;
+    btn.onclick = () => cargarPDF(file, "metodo-estandar-container");
+    contenedor.appendChild(btn);
+  });
+  
+  actualizarMetodoEstandarPaginacion();
+}
+
+// Función para actualizar la paginación para Método Estándar
+function actualizarMetodoEstandarPaginacion() {
+  const paginationContainer = document.getElementById("metodo-estandar-pagination");
+  paginationContainer.innerHTML = "";
+  
+  if (metodoTotalPaginas > 1) {
+    if (metodoPaginaActual > 0) {
+      const btnPrev = document.createElement("button");
+      btnPrev.textContent = "◀";
+      btnPrev.onclick = () => mostrarMetodoEstandarPagina(metodoPaginaActual - 1);
+      paginationContainer.appendChild(btnPrev);
+    }
+    
+    if (metodoPaginaActual < metodoTotalPaginas - 1) {
+      const btnNext = document.createElement("button");
+      btnNext.textContent = "▶";
+      btnNext.onclick = () => mostrarMetodoEstandarPagina(metodoPaginaActual + 1);
+      paginationContainer.appendChild(btnNext);
+    }
+  }
+}
+
+// Función para generar botones de Hoja de Éxitos usando filelist.json
+function generarExitosButtonsDinamicos() {
+  fetch('filelist.json')
+    .then(response => response.json())
+    .then(data => {
+      // Filtrar archivos que comienzan con "3" y terminan en ".pdf"
+      exitosArchivos = data.filter(file => file.startsWith("3") && file.endsWith(".pdf"));
+      exitosTotalPaginas = Math.ceil(exitosArchivos.length / ITEMS_POR_PAGINA_EXITOS);
+      mostrarExitosPagina(0);
+    })
+    .catch(error => console.error("Error al cargar filelist.json:", error));
+}
+
+// Función para mostrar una página de botones Hoja de Éxitos
+function mostrarExitosPagina(indicePagina) {
+  exitosPaginaActual = indicePagina;
+  const contenedor = document.getElementById("exitos-buttons");
+  contenedor.innerHTML = "";
+  
+  const inicio = exitosPaginaActual * ITEMS_POR_PAGINA_EXITOS;
+  const fin = inicio + ITEMS_POR_PAGINA_EXITOS;
+  const archivosPagina = exitosArchivos.slice(inicio, fin);
+  
+  archivosPagina.forEach(file => {
+    // Quitamos el primer carácter (el "3") y la extensión ".pdf"
+    const label = file.substring(1).replace(".pdf", "").trim();
+    const btn = document.createElement("button");
+    btn.textContent = label;
+    btn.onclick = () => cargarPDF(file, "exitos-container");
+    contenedor.appendChild(btn);
+  });
+  
+  actualizarExitosPaginacion();
+}
+
+// Función para actualizar la paginación para Hoja de Éxitos
+function actualizarExitosPaginacion() {
+  const paginationContainer = document.getElementById("exitos-pagination");
+  paginationContainer.innerHTML = "";
+  
+  if (exitosTotalPaginas > 1) {
+    if (exitosPaginaActual > 0) {
+      const btnPrev = document.createElement("button");
+      btnPrev.textContent = "◀";
+      btnPrev.onclick = () => mostrarExitosPagina(exitosPaginaActual - 1);
+      paginationContainer.appendChild(btnPrev);
+    }
+    
+    if (exitosPaginaActual < exitosTotalPaginas - 1) {
+      const btnNext = document.createElement("button");
+      btnNext.textContent = "▶";
+      btnNext.onclick = () => mostrarExitosPagina(exitosPaginaActual + 1);
+      paginationContainer.appendChild(btnNext);
+    }
+  }
+}
+
 // Función para cargar un PDF a pantalla completa
 function cargarPDF(ruta, origen) {
   previousScreen = origen || 'menu-principal';
@@ -154,6 +280,20 @@ function mostrarKaizens() {
   generarKaizensButtonsDinamicos();
 }
 
+// Función para mostrar la pantalla de Método Estándar y cargar botones
+function mostrarMetodoEstandar() {
+  ocultarTodosLosContenedores();
+  document.getElementById('metodo-estandar-container').style.display = 'flex';
+  generarMetodoEstandarButtonsDinamicos();
+}
+
+// Función para mostrar la pantalla de Hoja de Éxitos y cargar botones
+function mostrarExitos() {
+  ocultarTodosLosContenedores();
+  document.getElementById('exitos-container').style.display = 'flex';
+  generarExitosButtonsDinamicos();
+}
+
 // Función para volver al menú principal
 function volverMenu() {
   ocultarTodosLosContenedores();
@@ -166,13 +306,6 @@ function ocultarTodosLosContenedores() {
   document.getElementById('opl-container').style.display = 'none';
   document.getElementById('kaizens-container').style.display = 'none';
   document.getElementById('pdf-container').style.display = 'none';
-}
-
-// Funciones dummy para otros botones del menú principal
-function mostrarMetodoEstandar() {
-  alert("Método Estándar: contenido no implementado.");
-}
-
-function mostrarExitos() {
-  alert("Hoja de Éxitos: contenido no implementado.");
+  document.getElementById('metodo-estandar-container').style.display = 'none';
+  document.getElementById('exitos-container').style.display = 'none';
 }
