@@ -38,11 +38,11 @@ h2 {
 }
 
 #menu-principal {
-  display: flex; /* Establecemos flex como estado base */
+  display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+  min-height: 100vh;
 }
 
 #menu-principal button {
@@ -70,14 +70,7 @@ h2 {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  overflow: auto;
-  padding: 10px;
-}
-
-#pdf-frame {
-  width: 100%;
-  flex: 1;
-  border: none;
+  overflow: hidden; /* Evita scroll innecesario */
 }
 
 .pdf-header {
@@ -85,6 +78,7 @@ h2 {
   justify-content: space-between;
   padding: 10px;
   background-color: #f9f9f9;
+  flex-shrink: 0; /* Evita que el header se comprima */
 }
 
 .button-container {
