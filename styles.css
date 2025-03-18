@@ -1,11 +1,9 @@
-/* Estilos generales */
 body {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
   text-align: center;
-  color: #333;
 }
 
 .title-container {
@@ -16,55 +14,53 @@ body {
 }
 
 .title-container img {
-  width: 120px;
-  margin: 0 20px;
+  width: 100px;
+  margin: 10px 0;
 }
 
 h1 {
-  font-size: 3em; /* Título más grande */
+  font-size: 2.5em;
   margin: 0.5em 0;
-  background: linear-gradient(90deg, #007BFF, #FF5733);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: #333;
 }
 
-/* Menú Principal: Botones grandes y distribuidos en dos filas */
-#menu-principal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+h2 {
+  font-size: 2em;
+  margin: 0.5em 0;
+  color: #555;
 }
 
 .button-row {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-bottom: 20px;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+#menu-principal {
+  display: flex; /* Establecemos flex como estado base */
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  min-height: 100vh; /* Asegura que ocupe toda la pantalla */
 }
 
 #menu-principal button {
   background-color: #007BFF;
   color: white;
   border: none;
-  padding: 15px 30px;
-  font-size: 1.2em;
-  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  border-radius: 8px;
   cursor: pointer;
-  width: 200px;
-  height: 60px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  width: 180px;
+  transition: background-color 0.3s;
 }
 
 #menu-principal button:hover {
   background-color: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Contenedores de pantalla completa */
 .fullscreen-container {
   position: fixed;
   top: 0;
@@ -75,109 +71,72 @@ h1 {
   display: flex;
   flex-direction: column;
   overflow: auto;
-  box-sizing: border-box;
-  padding: 20px;
-  animation: fadeIn 0.5s ease-out;
+  padding: 10px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Visor de PDF */
 #pdf-frame {
   width: 100%;
   flex: 1;
   border: none;
 }
 
-/* Encabezado del visor PDF */
 .pdf-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 10px;
   background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.pdf-header .small-button {
-  position: static;
-  margin: 0 5px;
-}
-
-/* Pantalla OPLs */
-#opl-title {
-  font-size: 36px;
-  font-weight: bold;
-  margin: 20px 0;
-}
-
-/* Contenedor de botones OPL (grid de 3 columnas) */
 .button-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Tres columnas para 12 botones */
-  gap: 15px;
-  margin: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 10px;
 }
 
-/* Botones OPL: Más grandes */
 .button-container button {
   background-color: #28a745;
   color: white;
   border: none;
-  padding: 20px;
-  font-size: 1.3em;
+  padding: 15px;
+  font-size: 1.1em;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  transition: background-color 0.3s;
 }
 
 .button-container button:hover {
   background-color: #218838;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Paginación: Flechas grandes, centradas en la parte inferior */
 .pagination {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 20px;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .pagination button {
   background-color: #ffc107;
   color: white;
   border: none;
-  padding: 15px 20px;
-  font-size: 1.4em;
+  padding: 10px 15px;
+  font-size: 1.2em;
   border-radius: 5px;
-  margin: 0 10px;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition: background-color 0.3s;
 }
 
 .pagination button:hover {
   background-color: #e0a800;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Botón pequeño (por ejemplo, para CERRAR y DESCARGAR) */
 .small-button {
   background-color: #FF5733;
   color: white;
   border: none;
   padding: 8px 12px;
-  font-size: 0.9em;
+  font-size: 1em;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -187,14 +146,33 @@ h1 {
   background-color: #e14e2d;
 }
 
-/* Adaptación a dispositivos móviles */
-@media (max-width: 600px) {
+/* Media queries para móvil */
+@media (max-width: 768px) {
+  h1 { font-size: 1.8em; }
+  h2 { font-size: 1.5em; }
+  .title-container img { width: 80px; }
   .button-row {
     flex-direction: column;
+    width: 100%;
   }
-
   #menu-principal button {
     width: 90%;
-    margin: 10px auto;
+    margin: 5px auto;
+    font-size: 1em;
+  }
+  .button-container {
+    grid-template-columns: 1fr;
+  }
+  .button-container button {
+    font-size: 1em;
+    padding: 12px;
+  }
+  .pagination button {
+    padding: 8px 12px;
+    font-size: 1em;
+  }
+  .pdf-header {
+    flex-direction: column;
+    gap: 10px;
   }
 }
