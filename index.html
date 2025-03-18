@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WCM APILADORA LÍNEA DE ROCA</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
 </head>
 <body>
-  <!-- Contenedor para visualizar PDFs a pantalla completa -->
+  <!-- Contenedor para visualizar PDFs -->
   <div id="pdf-container" class="fullscreen-container" style="display:none;">
     <div class="pdf-header">
       <button class="small-button" onclick="goBack()">CERRAR</button>
@@ -20,7 +19,7 @@
   <!-- Contenedor para OPLs -->
   <div id="opl-container" class="fullscreen-container" style="display:none;">
     <button class="small-button" onclick="volverMenu()">MENÚ PRINCIPAL</button>
-    <h2 id="opl-title">OPLs</h2>
+    <h2>OPLs</h2>
     <div id="opl-buttons" class="button-container"></div>
     <div id="pagination-buttons" class="pagination"></div>
   </div>
@@ -28,7 +27,7 @@
   <!-- Contenedor para QUICK KAIZENs -->
   <div id="kaizens-container" class="fullscreen-container" style="display:none;">
     <button class="small-button" onclick="volverMenu()">MENÚ PRINCIPAL</button>
-    <h2 id="kaizens-title">QUICK KAIZENs</h2>
+    <h2>QUICK KAIZENs</h2>
     <div id="kaizens-buttons" class="button-container"></div>
     <div id="kaizens-pagination" class="pagination"></div>
   </div>
@@ -36,7 +35,7 @@
   <!-- Contenedor para MÉTODO ESTÁNDAR -->
   <div id="metodo-estandar-container" class="fullscreen-container" style="display:none;">
     <button class="small-button" onclick="volverMenu()">MENÚ PRINCIPAL</button>
-    <h2 id="metodo-estandar-title">MÉTODO ESTÁNDAR</h2>
+    <h2>MÉTODO ESTÁNDAR</h2>
     <div id="metodo-estandar-buttons" class="button-container"></div>
     <div id="metodo-estandar-pagination" class="pagination"></div>
   </div>
@@ -44,7 +43,7 @@
   <!-- Contenedor para HOJA DE ÉXITOS -->
   <div id="exitos-container" class="fullscreen-container" style="display:none;">
     <button class="small-button" onclick="volverMenu()">MENÚ PRINCIPAL</button>
-    <h2 id="exitos-title">HOJA DE ÉXITOS</h2>
+    <h2>HOJA DE ÉXITOS</h2>
     <div id="exitos-buttons" class="button-container"></div>
     <div id="exitos-pagination" class="pagination"></div>
   </div>
@@ -64,7 +63,7 @@
     <div class="button-row">
       <button onclick="mostrarMetodoEstandar()">MÉTODO ESTÁNDAR</button>
       <button onclick="mostrarExitos()">HOJA DE ÉXITOS</button>
-      <button onclick="cargarPDF('LIMPIEZA WCM APILADORA.pdf', 'menu-principal')" class="btn-limpieza">
+      <button onclick="cargarPDF('LIMPIEZA WCM APILADORA.pdf', 'menu-principal')">
         LIMPIEZA WCM APILADORA
       </button>
     </div>
