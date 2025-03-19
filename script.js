@@ -290,7 +290,3 @@ function ocultarTodosLosContenedores() {
   document.getElementById('exitos-container').style.display = 'none';
   document.getElementById('pdf-container').style.display = 'none';
 }
-
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
