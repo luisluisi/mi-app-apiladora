@@ -1,64 +1,74 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-.title-container {
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.title-container img {
-  width: 100px;
-  margin: 10px 0;
-}
-
-h1 {
-  font-size: 2.5em;
-  margin: 0.5em 0;
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
   color: #333;
-}
-
-h2 {
-  font-size: 2em;
-  margin: 0.5em 0;
-  color: #555;
-}
-
-.button-row {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-#menu-principal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
   min-height: 100vh;
 }
 
-#menu-principal button {
-  background-color: #007BFF;
+header {
+  background: #003087;
   color: white;
-  border: none;
-  padding: 12px 20px;
-  font-size: 1.1em;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 180px;
-  transition: background-color 0.3s;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #002060;
 }
 
-#menu-principal button:hover {
-  background-color: #0056b3;
+.logo-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5em;
+  margin: 5px 0;
+  font-weight: 700;
+}
+
+.header-logo {
+  width: 60px;
+  margin: 5px 0;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  width: 90%;
+  max-width: 1200px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.button-grid button {
+  background: #0056b3;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  font-size: 1.1em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-grid button:hover {
+  background: #003d82;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .fullscreen-container {
@@ -67,95 +77,141 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background: white;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Evita scroll innecesario */
+  overflow: hidden;
+  z-index: 500;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.submenu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #f0f4f8;
+  flex-shrink: 0;
+  border-bottom: 1px solid #ddd;
 }
 
 .pdf-header {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  background-color: #f9f9f9;
-  flex-shrink: 0; /* Evita que el header se comprima */
+  padding: 10px 20px;
+  background: #f0f4f8;
+  flex-shrink: 0;
+  border-bottom: 1px solid #ddd;
 }
 
 .button-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-  margin: 10px;
+  gap: 15px;
+  padding: 20px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 0 0 10px 10px;
 }
 
 .button-container button {
-  background-color: #28a745;
+  background: #28a745;
   color: white;
   border: none;
   padding: 15px;
   font-size: 1.1em;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .button-container button:hover {
-  background-color: #218838;
+  background: #218838;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .pagination {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 10px;
+  padding: 10px;
+  background: #f0f4f8;
 }
 
 .pagination button {
-  background-color: #ffc107;
-  color: white;
+  background: #ffc107;
+  color: #333;
   border: none;
   padding: 10px 15px;
   font-size: 1.2em;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.2s;
 }
 
 .pagination button:hover {
-  background-color: #e0a800;
+  background: #e0a800;
 }
 
 .small-button {
-  background-color: #FF5733;
+  background: #dc3545;
   color: white;
   border: none;
-  padding: 8px 12px;
+  padding: 10px 15px;
   font-size: 1em;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.2s;
 }
 
 .small-button:hover {
-  background-color: #e14e2d;
+  background: #c82333;
 }
 
-/* Media queries para móvil */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #003087;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1em;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.scroll-top:hover {
+  background: #002060;
+}
+
+h2 {
+  font-size: 1.8em;
+  color: #003087;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Media queries para móviles */
 @media (max-width: 768px) {
-  h1 { font-size: 1.8em; }
-  h2 { font-size: 1.5em; }
-  .title-container img { width: 80px; }
-  .button-row {
-    flex-direction: column;
-    width: 100%;
+  header h1 { font-size: 1.2em; }
+  .header-logo { width: 50px; }
+  .logo-container { gap: 10px; }
+  main { padding: 10px; }
+  .button-grid {
+    grid-template-columns: 1fr;
+    padding: 10px;
   }
-  #menu-principal button {
-    width: 90%;
-    margin: 5px auto;
+  .button-grid button {
     font-size: 1em;
+    padding: 12px;
   }
   .button-container {
     grid-template-columns: 1fr;
+    padding: 10px;
   }
   .button-container button {
     font-size: 1em;
@@ -165,8 +221,11 @@ h2 {
     padding: 8px 12px;
     font-size: 1em;
   }
-  .pdf-header {
+  .pdf-header, .submenu-header {
     flex-direction: column;
     gap: 10px;
+    align-items: flex-start;
   }
+  h2 { font-size: 1.5em; }
+  .scroll-top { padding: 8px 12px; }
 }
