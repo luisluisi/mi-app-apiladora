@@ -78,7 +78,7 @@ main {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+  height: 100vh;
   background: white;
   display: flex;
   flex-direction: column;
@@ -172,24 +172,6 @@ main {
   background: #c82333;
 }
 
-.scroll-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #003087;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  font-size: 1em;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.scroll-top:hover {
-  background: #002060;
-}
-
 h2 {
   font-size: 1.8em;
   color: #003087;
@@ -197,12 +179,11 @@ h2 {
   font-weight: 700;
 }
 
-/* Ajuste específico para el iframe del PDF */
 #pdf-frame {
-  flex-grow: 1; /* Ocupa el espacio restante */
-  min-height: 0; /* Evita problemas de altura mínima */
+  flex-grow: 1;
+  min-height: 0;
   width: 100%;
-  height: 100%; /* Asegura que llene el contenedor */
+  height: 100%;
   border: 2px solid #ddd;
 }
 
@@ -229,8 +210,8 @@ h2 {
     width: 100%;
   }
   .button-grid button {
-    font-size: 1em;
-    padding: 12px;
+    font-size: 1.2em; /* Letras más grandes */
+    padding: 15px 12px; /* Más anchos hacia abajo */
   }
   .button-container {
     grid-template-columns: 1fr;
@@ -247,18 +228,17 @@ h2 {
   .pdf-header, .submenu-header {
     flex-direction: column;
     gap: 10px;
-    align-items: flex-start;
+    align-items: center; /* Centrar contenido */
     padding: 10px;
   }
+  .small-button {
+    font-size: 1.1em; /* Botón "Menú Principal" un poco más grande */
+  }
   h2 {
-    font-size: 1.5em;
+    font-size: 1.8em; /* Título del submenú más grande */
   }
-  .scroll-top {
-    padding: 8px 12px;
-  }
-  /* Ajuste específico para móviles */
   #pdf-frame {
-    height: 100vh; /* Forzar altura completa en móviles */
-    min-height: 100vh; /* Garantizar que no colapse */
+    height: 100vh;
+    min-height: 100vh;
   }
 }
