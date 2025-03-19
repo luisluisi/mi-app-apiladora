@@ -5,7 +5,7 @@ body {
   background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
   color: #333;
   min-height: 100vh;
-  overflow-x: hidden; /* Evita scroll horizontal */
+  overflow-x: hidden;
 }
 
 header {
@@ -40,7 +40,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: calc(100vh - 100px); /* Ajusta altura según header */
+  min-height: calc(100vh - 100px);
 }
 
 .button-grid {
@@ -74,15 +74,15 @@ main {
 }
 
 .fullscreen-container {
-  position: absolute; /* Cambiado de fixed a absolute para permitir scroll */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 100%; /* Cambiado de height a min-height */
+  height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
   background: white;
   display: flex;
   flex-direction: column;
-  overflow-y: auto; /* Permite scroll vertical */
+  overflow-y: auto;
   z-index: 500;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
@@ -197,16 +197,24 @@ h2 {
   font-weight: 700;
 }
 
+/* Ajuste para el iframe del PDF */
+#pdf-frame {
+  flex-grow: 1; /* Hace que el iframe ocupe el espacio restante */
+  min-height: 0; /* Evita problemas de altura mínima */
+  width: 100%;
+  border: 2px solid #ddd;
+}
+
 /* Media queries para móviles */
 @media (max-width: 768px) {
   header {
-    padding: 5px; /* Reducir padding en móviles */
+    padding: 5px;
   }
   header h1 {
     font-size: 1.2em;
   }
   .header-logo {
-    width: 40px; /* Logos más pequeños en móviles */
+    width: 40px;
   }
   .logo-container {
     gap: 10px;
@@ -217,7 +225,7 @@ h2 {
   .button-grid {
     grid-template-columns: 1fr;
     padding: 10px;
-    width: 100%; /* Asegura que ocupe todo el ancho */
+    width: 100%;
   }
   .button-grid button {
     font-size: 1em;
