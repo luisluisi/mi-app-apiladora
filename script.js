@@ -230,10 +230,17 @@ function actualizarExitosPaginacion() {
 function cargarPDF(ruta, origen) {
   previousScreen = origen || 'menu-principal';
   ocultarTodosLosContenedores();
-  // Usar el visor de Google Docs con la URL de GitHub Pages
+  
+  const isLocalhost = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
   const baseUrl = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/');
   const pdfUrl = baseUrl + ruta;
-  document.getElementById('pdf-frame').src = 'https://docs.google.com/viewer?url=' + encodeURIComponent(pdfUrl) + '&embedded=true';
+
+  if (isLocalhost) {
+    document.getElementById('pdf-frame').src = ruta;
+  } else {
+    document.getElementById('pdf-frame').src = 'https://docs.google.com/viewer?url=' + encodeURIComponent(pdfUrl) + '&embedded=true';
+  }
+  
   document.getElementById('download-link').href = ruta;
   document.getElementById('pdf-container').style.display = 'flex';
 }
@@ -282,4 +289,8 @@ function ocultarTodosLosContenedores() {
   document.getElementById('metodo-estandar-container').style.display = 'none';
   document.getElementById('exitos-container').style.display = 'none';
   document.getElementById('pdf-container').style.display = 'none';
+}
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
