@@ -230,10 +230,10 @@ function actualizarExitosPaginacion() {
 function cargarPDF(ruta, origen) {
   previousScreen = origen || 'menu-principal';
   ocultarTodosLosContenedores();
-  // Usar el visor de Google Docs para visualizar el PDF en línea
-  const baseUrl = window.location.origin; // Obtiene la URL base de GitHub Pages
-  const pdfUrl = `${baseUrl}/${ruta}`;
-  document.getElementById('pdf-frame').src = `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
+  // Usar el visor de Google Docs con la URL de GitHub Pages
+  const baseUrl = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/');
+  const pdfUrl = baseUrl + ruta;
+  document.getElementById('pdf-frame').src = 'https://docs.google.com/viewer?url=' + encodeURIComponent(pdfUrl) + '&embedded=true';
   document.getElementById('download-link').href = ruta;
   document.getElementById('pdf-container').style.display = 'flex';
 }
