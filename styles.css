@@ -2,75 +2,78 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+  background: #f0f4f8; /* Fondo gris claro */
   color: #333;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
 header {
-  background: #003087;
+  background: linear-gradient(to right, #00468c, #002a5e); /* Cabecera con degradado azul más oscuro */
   color: white;
-  padding: 10px;
+  padding: 15px 10px; /* Un poco más de espacio interno */
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid #002060;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Sombra más marcada */
+  border-bottom: 3px solid #003087; /* Borde inferior ligeramente más grueso */
 }
 
 .logo-container {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 20px; /* Más espacio entre los logos */
   align-items: center;
 }
 
 header h1 {
-  font-size: 1.5em;
-  margin: 5px 0;
+  font-size: 1.8em; /* Título un poco más grande */
+  margin: 10px 0 5px; /* Márgenes ajustados */
   font-weight: 700;
+  letter-spacing: -0.5px; /* Pequeño ajuste en el espacio entre letras */
 }
 
 .header-logo {
-  width: 60px;
+  width: 65px; /* Logos ligeramente más grandes */
   margin: 5px 0;
+  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2)); /* Sombra en los logos */
 }
 
 main {
-  padding: 20px;
+  padding: 25px; /* Más espacio interno en la parte principal */
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 120px); /* Altura mínima ajustada */
 }
 
 .button-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  width: 90%;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Botones principales un poco más anchos */
+  gap: 20px; /* Más espacio entre botones */
+  width: 95%; /* Rejilla un poco más ancha */
   max-width: 1200px;
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 30px; /* Más espacio interno en la rejilla */
+  border-radius: 12px; /* Esquinas más redondeadas */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Sombra más suave y ancha */
 }
 
-.button-grid button {
-  background: #0056b3;
+.button-grid button.menu-button { /* Estilo para los botones del menú principal */
+  background: linear-gradient(140deg, #007bff, #0056b3); /* Botones con degradado azul */
   color: white;
   border: none;
-  padding: 15px 20px;
-  font-size: 1.1em;
+  padding: 18px 25px; /* Más espacio interno */
+  font-size: 1.2em; /* Letra un poco más grande */
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra en los botones */
+  font-weight: 500;
 }
 
-.button-grid button:hover {
-  background: #003d82;
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.button-grid button.menu-button:hover {
+  background: linear-gradient(140deg, #0069d9, #004494); /* Degradado más oscuro al pasar el ratón */
+  transform: scale(1.03); /* Ligeramente más grandes al pasar el ratón */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más grande al pasar el ratón */
 }
 
 .fullscreen-container {
@@ -79,75 +82,114 @@ main {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: white;
+  background: #fefefe; /* Fondo muy claro para las áreas de pantalla completa */
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   z-index: 500;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra ligeramente más fuerte para los contenedores */
 }
 
-.submenu-header {
+.submenu-header, .pdf-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background: #f0f4f8;
+  padding: 15px 25px; /* Más espacio interno en las cabeceras de submenú */
+  background: #f8f9fa; /* Fondo más claro para las cabeceras de submenú */
   flex-shrink: 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee; /* Borde muy claro */
 }
 
-.pdf-header {
+.search-container {
   display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-  background: #f0f4f8;
-  flex-shrink: 0;
-  border-bottom: 1px solid #ddd;
+  align-items: center;
+  margin-left: 20px;
+  position: relative; /* Para posicionar el botón de limpiar búsqueda */
 }
+
+.search-container input[type="text"] {
+  padding: 10px 30px 10px 15px; /* Espacio interno para la barra de búsqueda */
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  width: 200px; /* Ancho fijo para la barra de búsqueda */
+  background: #fff;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+  transition: border-color 0.3s ease;
+}
+
+.search-container input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25), inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.clear-search-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  color: #aaa;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  opacity: 0.8;
+  transition: color 0.2s;
+}
+
+.clear-search-button:hover {
+  color: #666;
+}
+
 
 .button-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Botones de documentos un poco más anchos */
   gap: 15px;
-  padding: 20px;
+  padding: 25px; /* Más espacio interno en el contenedor de botones */
   overflow-y: auto;
-  background: white;
-  border-radius: 0 0 10px 10px;
+  background: #fff; /* Fondo blanco para el contenedor de botones */
+  border-radius: 0 0 12px 12px; /* Esquinas inferiores redondeadas para que coincidan con la rejilla */
 }
 
-.button-container button {
-  background: #28a745;
+.button-container button { /* Estilo para los botones de documentos */
+  background: linear-gradient(140deg, #28a745, #1e7e34); /* Botones con degradado verde */
   color: white;
   border: none;
-  padding: 15px;
+  padding: 15px 20px;
   font-size: 1.1em;
-  border-radius: 10px;
+  border-radius: 8px; /* Esquinas un poco menos redondeadas que los botones del menú */
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra en los botones */
+  font-weight: 500;
 }
 
 .button-container button:hover {
-  background: #218838;
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(140deg, #218838, #19692c); /* Degradado verde más oscuro al pasar el ratón */
+  transform: scale(1.02); /* Ligeramente más grandes al pasar el ratón */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Sombra más grande al pasar el ratón */
 }
+
 
 .pagination {
   display: flex;
   justify-content: center;
   gap: 10px;
-  padding: 10px;
-  background: #f0f4f8;
+  padding: 15px; /* Más espacio interno en la paginación */
+  background: #f8f9fa; /* Fondo más claro para la paginación */
+  border-radius: 0 0 12px 12px; /* Esquinas inferiores redondeadas para que coincidan con el contenedor */
 }
 
 .pagination button {
   background: #ffc107;
   color: #333;
   border: none;
-  padding: 10px 15px;
-  font-size: 1.2em;
+  padding: 10px 18px; /* Espacio interno ajustado para los botones de paginación */
+  font-size: 1.1em; /* Letra ligeramente más pequeña en la paginación */
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.2s;
@@ -173,10 +215,11 @@ main {
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 2em; /* Títulos de submenú más grandes */
   color: #003087;
   margin: 0;
   font-weight: 700;
+  letter-spacing: -0.8px; /* Pequeño ajuste en el espacio entre letras */
 }
 
 #pdf-frame {
@@ -184,38 +227,40 @@ h2 {
   min-height: 0;
   width: 100%;
   height: 100%;
-  border: 2px solid #ddd;
+  border: none; /* Se eliminó el borde del iframe */
 }
 
 /* Media queries para móviles */
 @media (max-width: 768px) {
   header {
-    padding: 5px;
+    padding: 10px 5px; /* Espacio interno ajustado para la cabecera en móviles */
   }
   header h1 {
-    font-size: 1.2em;
+    font-size: 1.4em; /* Título más pequeño en móviles */
   }
   .header-logo {
-    width: 40px;
+    width: 50px; /* Logos más pequeños en móviles */
   }
   .logo-container {
     gap: 10px;
   }
   main {
-    padding: 10px;
+    padding: 15px; /* Espacio interno ajustado para la parte principal en móviles */
   }
   .button-grid {
     grid-template-columns: 1fr;
-    padding: 10px;
+    padding: 20px; /* Espacio interno ajustado para la rejilla en móviles */
     width: 100%;
+    gap: 15px;
   }
-  .button-grid button {
-    font-size: 1.2em; /* Letras más grandes */
-    padding: 15px 12px; /* Más anchos hacia abajo */
+  .button-grid button.menu-button {
+    font-size: 1.1em; /* Letra ligeramente más pequeña en los botones de móviles */
+    padding: 15px 15px; /* Espacio interno ajustado para los botones en móviles */
   }
   .button-container {
     grid-template-columns: 1fr;
-    padding: 10px;
+    padding: 15px; /* Espacio interno ajustado para el contenedor en móviles */
+    gap: 10px;
   }
   .button-container button {
     font-size: 1em;
@@ -228,14 +273,23 @@ h2 {
   .pdf-header, .submenu-header {
     flex-direction: column;
     gap: 10px;
-    align-items: center; /* Centrar contenido */
-    padding: 10px;
+    align-items: center;
+    padding: 15px; /* Espacio interno ajustado para las cabeceras en móviles */
   }
+  .search-container {
+    margin-left: 0; /* Eliminar margen izquierdo en móviles */
+    margin-top: 10px; /* Añadir margen superior a la barra de búsqueda en móviles */
+  }
+  .search-container input[type="text"] {
+    width: 100%; /* Barra de búsqueda a ancho completo en móviles */
+    max-width: 300px; /* Ancho máximo para la barra de búsqueda en móviles */
+  }
+
   .small-button {
-    font-size: 1.1em; /* Botón "Menú Principal" un poco más grande */
+    font-size: 1em; /* Tamaño de letra ajustado para los botones pequeños en móviles */
   }
   h2 {
-    font-size: 1.8em; /* Título del submenú más grande */
+    font-size: 1.6em; /* Títulos de submenú más pequeños en móviles */
   }
   #pdf-frame {
     height: 100vh;
