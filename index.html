@@ -19,60 +19,80 @@
   <div id="pdf-container" class="fullscreen-container" style="display:none;">
     <div class="pdf-header">
       <button class="small-button" onclick="goBack()">Cerrar</button>
-      <a id="download-link" href="" download class="small-button">Descargar</a>
     </div>
     <iframe id="pdf-frame" style="width: 100%; height: 100%; border: 2px solid #ddd;"></iframe>
   </div>
-  
+
   <div id="opl-container" class="fullscreen-container" style="display:none;">
     <div class="submenu-header">
       <button class="small-button" onclick="volverMenu()">Menú Principal</button>
       <h2>OPLs</h2>
+      <div class="search-container">
+        <input type="text" id="opl-search" placeholder="Buscar OPL..." oninput="filtrarOPLs()">
+        <button class="clear-search-button" onclick="clearSearch('opl')" style="display:none;">×</button>
+      </div>
     </div>
     <div id="opl-buttons" class="button-container"></div>
-    <div id="pagination-buttons" class="pagination"></div>
+    <div id="opl-pagination" class="pagination"></div>
+    <p id="opl-no-results" style="display:none; padding: 20px; text-align: center;">No se encontraron documentos.</p>
   </div>
-  
+
   <div id="kaizens-container" class="fullscreen-container" style="display:none;">
     <div class="submenu-header">
       <button class="small-button" onclick="volverMenu()">Menú Principal</button>
       <h2>Quick Kaizens</h2>
+      <div class="search-container">
+        <input type="text" id="kaizens-search" placeholder="Buscar Kaizen..." oninput="filtrarKaizens()">
+        <button class="clear-search-button" onclick="clearSearch('kaizens')" style="display:none;">×</button>
+      </div>
     </div>
     <div id="kaizens-buttons" class="button-container"></div>
     <div id="kaizens-pagination" class="pagination"></div>
+    <p id="kaizens-no-results" style="display:none; padding: 20px; text-align: center;">No se encontraron documentos.</p>
   </div>
-  
+
   <div id="metodo-estandar-container" class="fullscreen-container" style="display:none;">
     <div class="submenu-header">
       <button class="small-button" onclick="volverMenu()">Menú Principal</button>
       <h2>Método Estándar</h2>
+      <div class="search-container">
+        <input type="text" id="metodo-estandar-search" placeholder="Buscar Método..." oninput="filtrarMetodoEstandar()">
+        <button class="clear-search-button" onclick="clearSearch('metodo-estandar')" style="display:none;">×</button>
+      </div>
     </div>
     <div id="metodo-estandar-buttons" class="button-container"></div>
     <div id="metodo-estandar-pagination" class="pagination"></div>
+    <p id="metodo-estandar-no-results" style="display:none; padding: 20px; text-align: center;">No se encontraron documentos.</p>
   </div>
-  
+
   <div id="exitos-container" class="fullscreen-container" style="display:none;">
     <div class="submenu-header">
       <button class="small-button" onclick="volverMenu()">Menú Principal</button>
       <h2>Hoja de Éxitos</h2>
+      <div class="search-container">
+        <input type="text" id="exitos-search" placeholder="Buscar Éxito..." oninput="filtrarExitos()">
+        <button class="clear-search-button" onclick="clearSearch('exitos')" style="display:none;">×</button>
+      </div>
     </div>
     <div id="exitos-buttons" class="button-container"></div>
     <div id="exitos-pagination" class="pagination"></div>
+    <p id="exitos-no-results" style="display:none; padding: 20px; text-align: center;">No se encontraron documentos.</p>
   </div>
-  
+
   <main id="menu-principal">
     <div class="button-grid">
-      <button onclick="cargarPDF('MANUAL APILADORA.pdf', 'menu-principal')">Manual Apiladora</button>
-      <button onclick="mostrarOPLs()">OPLs</button>
-      <button onclick="mostrarKaizens()">Quick Kaizens</button>
-      <button onclick="mostrarMetodoEstandar()">Método Estándar</button>
-      <button onclick="mostrarExitos()">Hoja de Éxitos</button>
-      <button onclick="cargarPDF('LIMPIEZA WCM APILADORA.pdf', 'menu-principal')">
+      <button class="menu-button" onclick="cargarPDF('MANUAL APILADORA.pdf', 'menu-principal')">Manual Apiladora</button>
+      <button class="menu-button" onclick="mostrarOPLs()">OPLs</button>
+      <button class="menu-button" onclick="mostrarKaizens()">Quick Kaizens</button>
+      <button class="menu-button" onclick="mostrarMetodoEstandar()">Método Estándar</button>
+      <button class="menu-button" onclick="mostrarExitos()">Hoja de Éxitos</button>
+      <button class="menu-button" onclick="cargarPDF('LIMPIEZA WCM APILADORA.pdf', 'menu-principal')">
         Limpieza WCM Apiladora
       </button>
     </div>
   </main>
-  
+
   <script src="script.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </body>
 </html>
