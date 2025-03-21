@@ -8,75 +8,75 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
+  <header class="main-header">
     <div class="logo-container">
       <img src="saint-gobain-logo-new.png" alt="Saint-Gobain Logo" class="header-logo">
       <img src="new-logo.png" alt="New Logo" class="header-logo">
     </div>
-    <h1>WCM Apiladora - Línea de Roca</h1>
+    <h1 class="main-title">WCM Apiladora - Línea de Roca</h1>
   </header>
 
   <div id="pdf-container" class="fullscreen-container" style="display:none;">
     <div class="pdf-header">
       <button class="small-button" onclick="goBack()">Cerrar</button>
     </div>
-    <iframe id="pdf-frame" style="width: 100%; height: 100%; border: 2px solid #ddd;"></iframe>
+    <iframe id="pdf-frame" style="width: 100%; height: 100%; border: none;"></iframe>
   </div>
 
   <div id="opl-container" class="fullscreen-container" style="display:none;">
     <div class="submenu-header">
       <button class="small-button" onclick="volverMenu()">Menú Principal</button>
-      <h2>OPLs</h2>
+      <h2 class="submenu-title">OPLs</h2>
       <div class="search-container">
-        <input type="text" id="opl-search" placeholder="Buscar OPL..." oninput="filtrarOPLs()">
+        <input type="text" id="opl-search" class="search-input" placeholder="Buscar OPL..." oninput="filtrarOPLs()">
         <button class="clear-search-button" onclick="clearSearch('opl')" style="display:none;">×</button>
       </div>
     </div>
     <div id="opl-buttons" class="button-container"></div>
     <div id="opl-pagination" class="pagination"></div>
-    <p id="opl-no-results" style="display:none; padding: 20px; text-align: center;">No se encontraron documentos.</p>
+    <p id="opl-no-results" class="no-results-message" style="display:none;">No se encontraron documentos.</p>
   </div>
 
   <div id="kaizens-container" class="fullscreen-container" style="display:none;">
     <div class="submenu-header">
       <button class="small-button" onclick="volverMenu()">Menú Principal</button>
-      <h2>Quick Kaizens</h2>
+      <h2 class="submenu-title">Quick Kaizens</h2>
       <div class="search-container">
-        <input type="text" id="kaizens-search" placeholder="Buscar Kaizen..." oninput="filtrarKaizens()">
+        <input type="text" id="kaizens-search" class="search-input" placeholder="Buscar Kaizen..." oninput="filtrarKaizens()">
         <button class="clear-search-button" onclick="clearSearch('kaizens')" style="display:none;">×</button>
       </div>
     </div>
     <div id="kaizens-buttons" class="button-container"></div>
     <div id="kaizens-pagination" class="pagination"></div>
-    <p id="kaizens-no-results" style="display:none; padding: 20px; text-align: center;">No se encontraron documentos.</p>
+    <p id="kaizens-no-results" class="no-results-message" style="display:none;">No se encontraron documentos.</p>
   </div>
 
   <div id="metodo-estandar-container" class="fullscreen-container" style="display:none;">
     <div class="submenu-header">
       <button class="small-button" onclick="volverMenu()">Menú Principal</button>
-      <h2>Método Estándar</h2>
+      <h2 class="submenu-title">Método Estándar</h2>
       <div class="search-container">
-        <input type="text" id="metodo-estandar-search" placeholder="Buscar Método..." oninput="filtrarMetodoEstandar()">
+        <input type="text" id="metodo-estandar-search" class="search-input" placeholder="Buscar Método..." oninput="filtrarMetodoEstandar()">
         <button class="clear-search-button" onclick="clearSearch('metodo-estandar')" style="display:none;">×</button>
       </div>
     </div>
     <div id="metodo-estandar-buttons" class="button-container"></div>
     <div id="metodo-estandar-pagination" class="pagination"></div>
-    <p id="metodo-estandar-no-results" style="display:none; padding: 20px; text-align: center;">No se encontraron documentos.</p>
+    <p id="metodo-estandar-no-results" class="no-results-message" style="display:none;">No se encontraron documentos.</p>
   </div>
 
   <div id="exitos-container" class="fullscreen-container" style="display:none;">
     <div class="submenu-header">
       <button class="small-button" onclick="volverMenu()">Menú Principal</button>
-      <h2>Hoja de Éxitos</h2>
+      <h2 class="submenu-title">Hoja de Éxitos</h2>
       <div class="search-container">
-        <input type="text" id="exitos-search" placeholder="Buscar Éxito..." oninput="filtrarExitos()">
+        <input type="text" id="exitos-search" class="search-input" placeholder="Buscar Éxito..." oninput="filtrarExitos()">
         <button class="clear-search-button" onclick="clearSearch('exitos')" style="display:none;">×</button>
       </div>
     </div>
     <div id="exitos-buttons" class="button-container"></div>
     <div id="exitos-pagination" class="pagination"></div>
-    <p id="exitos-no-results" style="display:none; padding: 20px; text-align: center;">No se encontraron documentos.</p>
+    <p id="exitos-no-results" class="no-results-message" style="display:none;">No se encontraron documentos.</p>
   </div>
 
   <main id="menu-principal">
@@ -93,6 +93,5 @@
   </main>
 
   <script src="script.js"></script>
-  <link rel="stylesheet" href="styles.css">
 </body>
 </html>
