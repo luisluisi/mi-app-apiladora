@@ -6,11 +6,6 @@
   <title>WCM Apiladora - Línea de Roca</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Fuente Inter desde Google Fonts (Más moderna que Roboto) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -23,15 +18,15 @@
 
   <div id="pdf-container" class="fullscreen-container" style="display:none;">
     <div class="pdf-header">
-      <button class="small-button" onclick="goBack()" aria-label="Cerrar">Cerrar</button>
-      <a id="download-link" href="" download class="small-button" aria-label="Descargar">Descargar</a>
+      <button class="small-button" onclick="goBack()">Cerrar</button>
+      <a id="download-link" href="" download class="small-button">Descargar</a>
     </div>
     <iframe id="pdf-frame" style="width: 100%; height: 100%; border: 2px solid #ddd;"></iframe>
   </div>
   
   <div id="opl-container" class="fullscreen-container" style="display:none;">
     <div class="submenu-header">
-      <button class="small-button" onclick="volverMenu()" aria-label="Menú Principal">Menú Principal</button>
+      <button class="small-button" onclick="volverMenu()">Menú Principal</button>
       <h2>OPLs</h2>
     </div>
     <div id="opl-buttons" class="button-container"></div>
@@ -40,7 +35,7 @@
   
   <div id="kaizens-container" class="fullscreen-container" style="display:none;">
     <div class="submenu-header">
-      <button class="small-button" onclick="volverMenu()" aria-label="Menú Principal">Menú Principal</button>
+      <button class="small-button" onclick="volverMenu()">Menú Principal</button>
       <h2>Quick Kaizens</h2>
     </div>
     <div id="kaizens-buttons" class="button-container"></div>
@@ -49,7 +44,7 @@
   
   <div id="metodo-estandar-container" class="fullscreen-container" style="display:none;">
     <div class="submenu-header">
-      <button class="small-button" onclick="volverMenu()" aria-label="Menú Principal">Menú Principal</button>
+      <button class="small-button" onclick="volverMenu()">Menú Principal</button>
       <h2>Método Estándar</h2>
     </div>
     <div id="metodo-estandar-buttons" class="button-container"></div>
@@ -58,7 +53,7 @@
   
   <div id="exitos-container" class="fullscreen-container" style="display:none;">
     <div class="submenu-header">
-      <button class="small-button" onclick="volverMenu()" aria-label="Menú Principal">Menú Principal</button>
+      <button class="small-button" onclick="volverMenu()">Menú Principal</button>
       <h2>Hoja de Éxitos</h2>
     </div>
     <div id="exitos-buttons" class="button-container"></div>
@@ -67,12 +62,12 @@
   
   <main id="menu-principal">
     <div class="button-grid">
-      <button class="main-button" onclick="cargarPDF('MANUAL APILADORA.pdf', 'menu-principal')" aria-label="Manual Apiladora">Manual Apiladora</button>
-      <button class="main-button" onclick="mostrarOPLs()" aria-label="OPLs">OPLs</button>
-      <button class="main-button" onclick="mostrarKaizens()" aria-label="Quick Kaizens">Quick Kaizens</button>
-      <button class="main-button" onclick="mostrarMetodoEstandar()" aria-label="Método Estándar">Método Estándar</button>
-      <button class="main-button" onclick="mostrarExitos()" aria-label="Hoja de Éxitos">Hoja de Éxitos</button>
-      <button class="main-button" onclick="cargarPDF('LIMPIEZA WCM APILADORA.pdf', 'menu-principal')" aria-label="Limpieza WCM Apiladora">
+      <button onclick="cargarPDF('MANUAL APILADORA.pdf', 'menu-principal')">Manual Apiladora</button>
+      <button onclick="mostrarOPLs()">OPLs</button>
+      <button onclick="mostrarKaizens()">Quick Kaizens</button>
+      <button onclick="mostrarMetodoEstandar()">Método Estándar</button>
+      <button onclick="mostrarExitos()">Hoja de Éxitos</button>
+      <button onclick="cargarPDF('LIMPIEZA WCM APILADORA.pdf', 'menu-principal')">
         Limpieza WCM Apiladora
       </button>
     </div>
